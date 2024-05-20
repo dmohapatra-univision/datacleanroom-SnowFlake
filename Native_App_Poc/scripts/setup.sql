@@ -1,0 +1,1 @@
+-- Setup script for the Hello Snowflake! application.
