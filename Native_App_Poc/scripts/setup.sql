@@ -15,3 +15,6 @@ CREATE OR REPLACE PROCEDURE native_app_poc.HELLO()
 
 
 GRANT USAGE ON PROCEDURE native_app_poc.HELLO() TO APPLICATION ROLE app_native;
+
+
+EXECUTE IMMEDIATE FROM './data.sql';
