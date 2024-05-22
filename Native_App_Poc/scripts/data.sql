@@ -10,11 +10,3 @@ INSERT INTO shared_data.accounts VALUES
 
 GRANT USAGE ON SCHEMA shared_data TO SHARE IN APPLICATION PACKAGE native_app_poc;
 GRANT SELECT ON TABLE shared_data.accounts TO SHARE IN APPLICATION PACKAGE native_app_poc;  
-
-CREATE OR ALTER VERSIONED SCHEMA native_app_poc.code_schema;
-GRANT USAGE ON SCHEMA native_app_poc.code_schema TO APPLICATION ROLE app_native;
-
-CREATE VIEW IF NOT EXISTS native_app_poc.code_schema.accounts_view
-  AS SELECT ID, NAME, VALUE
-  FROM shared_data.accounts;
-GRANT SELECT ON VIEW native_app_poc.code_schema.accounts_view TO APPLICATION ROLE app_native;
