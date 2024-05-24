@@ -26,3 +26,11 @@ CREATE or REPLACE FUNCTION code_schema.multiply(num1 float, num2 float)
   HANDLER='hello_python.multiply';
 
 GRANT USAGE ON FUNCTION code_schema.multiply(FLOAT, FLOAT) TO APPLICATION ROLE app_native;
+
+
+CREATE STREAMLIT code_schema.hello_snowflake_streamlit
+  FROM '/streamlit'
+  MAIN_FILE = '/hello_snowflake.py'
+;
+
+GRANT USAGE ON STREAMLIT code_schema.hello_snowflake_streamlit TO APPLICATION ROLE app_native;
